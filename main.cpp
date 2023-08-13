@@ -1,12 +1,10 @@
+#include<windows.h>
+#include<mmsystem.h>
 #include <iostream>
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include<math.h>
-#include<stdio.h>
 # define PI 3.14159265358979323846
-#include<Windows.h>
-#include<MMSystem.h>
-
 #define ESCAPE 27
 
 #define HIGH 1
@@ -36,7 +34,7 @@ GLfloat positionbus4=0.0f;
 GLfloat boatspeed1 = 0.02f;
 GLfloat boatspeed = 0.01f;
 GLfloat boatspeed2 = 0.014f;
-GLfloat speed = 0.1f;  /// wave speed
+GLfloat speed = 0.01f;  /// wave speed
 GLfloat speed1 = 0.02f; /// vehicles speed
 GLfloat speed2 = 0.012f;/// vehicles speed
 GLfloat speed3=0.02f;/// vehicles speed
@@ -12353,7 +12351,7 @@ void grass1()
 {
 
         glBegin(GL_POLYGON);
-    glColor3ub(57,240,0);
+    glColor3ub(184,115,51);
     glVertex2f(-1.0f, -0.70f);
     glVertex2f(1.0f, -0.70f);
     glVertex2f(1.0f, -1.0f);
@@ -13196,15 +13194,7 @@ glEnd();
 glPopMatrix();
 
 }
-void sound1()
-{
-       PlaySound("D:\Aiub classes\Computer Graphics\FInal Project\Project\bin\Debug\sound1.wav.wav", NULL,SND_ASYNC|SND_FILENAME|SND_LOOP);
-}
-/*
-void sound2()
-{
 
-}*/
 //update------------------------------Cloud and plane----------------------------------------
 void update11(int value) {
 	if (position11<-1.3)
@@ -13247,34 +13237,44 @@ glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to black and opaqu
 glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer (background)
 
 glColor3f(1.0,0.0,0.0);
-    renderBitmapString(-0.20, 0.90, 0.0, GLUT_BITMAP_TIMES_ROMAN_24, "Scenery of a Mountain");
+    renderBitmapString(-0.20, 0.90, 0.0, GLUT_BITMAP_TIMES_ROMAN_24, "Marine Drive Road Scenario");
     renderBitmapString(-0.20, 0.80, 0.0, GLUT_BITMAP_TIMES_ROMAN_24, "Computer Graphics [E]");
-    renderBitmapString(-0.20, 0.70, 0.0, GLUT_BITMAP_TIMES_ROMAN_24, "Group Member :");
+    renderBitmapString(-0.20, 0.70, 0.0, GLUT_BITMAP_TIMES_ROMAN_24, "Group Information :");
 glBegin(GL_LINES);
     glColor3f(0.0f, 0.0f, 0.0f);
-    glVertex2f(-0.80, 0.65);
-    glVertex2f(0.80, 0.65);
+    glVertex2f(-0.80, 0.66);
+    glVertex2f(0.80, 0.66);
     glEnd();
 renderBitmapString(-0.80, 0.60, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "ID");
     renderBitmapString(-0.30, 0.60, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Name");
-
+ //   renderBitmapString(0.50, 0.60, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Contribution");
+glBegin(GL_LINES);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex2f(-0.80, 0.57);
+    glVertex2f(0.80, 0.57);
+    glEnd();
     renderBitmapString(-0.80, 0.50, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "21-45817-3");
     renderBitmapString(-0.30, 0.50, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Mridul Chowhan");
+ //   renderBitmapString(0.50, 0.50, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Mridul Chowhan");
 
 
     renderBitmapString(-0.80, 0.40, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "21-44920-2");
     renderBitmapString(-0.30, 0.40, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Tama Saha");
+  //  renderBitmapString(0.50, 0.40, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Tama Saha");
 
     renderBitmapString(-0.80, 0.30, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "21-45834-3");
     renderBitmapString(-0.30, 0.30, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Morshed Al-Jaber Bishal");
+  //  renderBitmapString(0.50, 0.30, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Morshed Al-Jaber Bishal");
 
 
     renderBitmapString(-0.80, 0.20, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "21-45837-3");
     renderBitmapString(-0.30, 0.20, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Sanviraj Aynul Siam");
+  //  renderBitmapString(0.50, 0.20, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Sanviraj Aynul Siam");
 
 
     renderBitmapString(-0.80, 0.10, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "21-45556-3");
     renderBitmapString(-0.30, 0.10, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Sarowar Jahan Protik");
+//renderBitmapString(0.50, 0.10, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "Sarowar Jahan Protik");
 
 
     glBegin(GL_LINES);
@@ -13300,7 +13300,7 @@ renderBitmapString(-0.80, 0.60, 0.0f, GLUT_BITMAP_TIMES_ROMAN_24, "ID");
 void day()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(0.0f, 0.745f, 1.0f, 1.0f);
+
 
   sky();
 
@@ -13368,16 +13368,23 @@ boat2();
     	glPushMatrix();
 boat3();
     glPopMatrix();
-sound1();
+
 	glFlush();
 }
 
 void night2()
 {
 
-	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-
+glColor3f(0.518f,0.518f,0.541f);
+glColor3f(0.663,0.663f,0.69f);
+       glBegin(GL_QUADS);
+    glVertex2f(-1.0f, 0.5f);
+    glVertex2f(1.0f, 0.5f);
+    glColor3f(0.263f,0.247f,0.459f);
+    glBegin(GL_QUADS);
+    glVertex2f(1.0f, 1.0f);
+    glVertex2f(-1.0f, 1.0f);
+    glEnd();
 
 
     glPushMatrix();
@@ -13429,8 +13436,7 @@ glPopMatrix();
     	glPushMatrix();
 boat5();
     glPopMatrix();
-
-
+//sound1();
 glFlush();
 }
 
@@ -13438,7 +13444,15 @@ glFlush();
 void evening()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+glColor3f(0.518f,0.518f,0.541f);
+       glBegin(GL_QUADS);
+    glVertex2f(-1.0f, 0.5f);
+    glVertex2f(1.0f, 0.5f);
+    glColor3f(0.031f,0.059f,0.212f);
+    glBegin(GL_QUADS);
+    glVertex2f(1.0f, 1.0f);
+    glVertex2f(-1.0f, 1.0f);
+    glEnd();
 
 
     sky1();
@@ -13458,14 +13472,22 @@ void evening()
      glPushMatrix();
     man2();
     glPopMatrix();
+
 glFlush();
 }
 
 void night1()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-
+	glColor3f(0.518f,0.518f,0.541f);
+       glBegin(GL_QUADS);
+    glVertex2f(-1.0f, 0.5f);
+    glVertex2f(1.0f, 0.5f);
+    glColor3f(0.031f,0.059f,0.212f);
+    glBegin(GL_QUADS);
+    glVertex2f(1.0f, 1.0f);
+    glVertex2f(-1.0f, 1.0f);
+    glEnd();
 
 
     glPushMatrix();
@@ -13500,7 +13522,16 @@ glFlush();
 void night3()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glColor3f(0.518f,0.518f,0.541f);
+       glBegin(GL_QUADS);
+    glVertex2f(-1.0f, 0.5f);
+    glVertex2f(1.0f, 0.5f);
+    glColor3f(0.031f,0.059f,0.212f);
+    glBegin(GL_QUADS);
+    glVertex2f(1.0f, 1.0f);
+    glVertex2f(-1.0f, 1.0f);
+    glEnd();
+
 sky3();
    glPushMatrix();
 Star();
@@ -13857,11 +13888,14 @@ void handleKeypress(unsigned char key, int x, int y)
     break;
 case ' ':
     glutDisplayFunc(day);
+    sndPlaySound("sound0.wav", SND_ASYNC);
+
     glutPostRedisplay();
     break;
 
     case '1':
     glutDisplayFunc(evening);
+    sndPlaySound("sound2.wav", SND_ASYNC);
     glutPostRedisplay();
     break;
 
@@ -13872,10 +13906,12 @@ case '2':
 
 case '3':
     glutDisplayFunc(night2);
+    sndPlaySound("sound3.wav", SND_ASYNC);
     glutPostRedisplay();
     break;
     case '4':
     glutDisplayFunc(night3);
+    sndPlaySound("sound4.wav", SND_ASYNC);
     glutPostRedisplay();
     break;
         case 'a':
@@ -14171,7 +14207,6 @@ int main(int argc, char** argv)
 
       glutTimerFunc(110, update, 0);
       glutTimerFunc(110, update2, 0);
-//	    glutTimerFunc(100, update4, 0);
 	    glutTimerFunc(100, update11, 0);
 		glutTimerFunc(110, update111, 0);
 			glutTimerFunc(110, update22, 0);
@@ -14187,11 +14222,10 @@ int main(int argc, char** argv)
       glutTimerFunc(100, updateJ, 0);
         glutTimerFunc(100, updateK, 0);
       glutTimerFunc(100, updateL, 0);
-//	glutKeyboardFunc(handleKeypress1);
 		glutKeyboardFunc(handleKeypress);
  glutMouseFunc(handleMouse);
    glutSpecialFunc(SpecialInput);
-sound1();
+
     glutMainLoop();
     return 0;
 }
